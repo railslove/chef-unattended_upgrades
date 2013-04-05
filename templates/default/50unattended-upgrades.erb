@@ -7,10 +7,9 @@ Unattended-Upgrade::Allowed-Origins {
 
 // List of packages to not update
 Unattended-Upgrade::Package-Blacklist {
-//      "vim";
-//      "libc6";
-//      "libc6-dev";
-//      "libc6-i686";
+<% node['unattended_upgrades']['package_blacklist'].each do |package| %>
+  "<%= package %>";
+<% end -%>
 };
 
 // This option allows you to control if on a unclean dpkg exit
