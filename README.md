@@ -1,23 +1,16 @@
 unattended_upgrades Cookbook
 ============================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+configures unattended upgrades for ubuntu
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
 #### packages
-- `toaster` - unattended_upgrades needs toaster to brown your bagel.
+- `mailutils` - unattended_upgrades needs mail if you want use the email feature
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
 #### unattended_upgrades::default
 <table>
   <tr>
@@ -27,19 +20,53 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['unattended_upgrades']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['unattended_upgrades']['update_package_lists']</tt></td>
+    <td>Integer</td>
+    <td></td>
+    <td><tt>1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['download_upgradeable_packages']</tt></td>
+    <td>Integer</td>
+    <td></td>
+    <td><tt>1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['autoclean_interval']</tt></td>
+    <td>Integer</td>
+    <td></td>
+    <td><tt>7</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['unattended_upgrade']</tt></td>
+    <td>Integer</td>
+    <td></td>
+    <td><tt>1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['allowed_origins']</tt></td>
+    <td>Array</td>
+    <td></td>
+    <td><tt>["security"]</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['package_blacklist']</tt></td>
+    <td>Array</td>
+    <td></td>
+    <td><tt>[]</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['unattended_upgrades']['mail']</tt></td>
+    <td>String</td>
+    <td></td>
+    <td><tt></tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### unattended_upgrades::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `unattended_upgrades` in your node's `run_list`:
 
 ```json
@@ -65,4 +92,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: [kangguru]("https://github.com/kangguru")
