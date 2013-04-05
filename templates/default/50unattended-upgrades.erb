@@ -35,8 +35,8 @@ Unattended-Upgrade::Package-Blacklist {
 // If empty or unset then no email is sent, make sure that you
 // have a working mail setup on your system. A package that provides
 // 'mailx' must be installed.
-<% if node[:unattended_upgrades][:mail] %>
-Unattended-Upgrade::Mail <%= node[:unattended_upgrades][:mail] %>;
+<% if node['unattended_upgrades']['mail'] %>
+Unattended-Upgrade::Mail <%= node['unattended_upgrades']['mail'] %>;
 <% end -%>
 
 // Set this value to "true" to get emails only on errors. Default
